@@ -1,0 +1,128 @@
+body {
+    margin: 25px;
+    font-family: Arial, sans-serif;
+    background: #f7f5f5;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    background: #b7f2c0;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.field {
+    position: relative; 
+    flex: 1;
+    display: flex;
+}
+
+input, select, button, .results {
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 1px dashed red;
+    outline: none;
+    background: transparent;
+    color: red;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+}
+
+select {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    padding-right: 35px;
+    flex-shrink: 0;
+    appearance: none;
+}
+
+.select-wrapper {
+    position: relative;
+    align-self: center;
+}
+
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    pointer-events: none;
+    font-size: 14px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+}
+
+button {
+    display: block;
+    padding: 5px 40px;
+    cursor: pointer;
+    align-self: center;
+}
+
+button:hover {
+    background: rgba(255, 0, 0, 0.05);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    min-height: 80px;
+    width: 100%;
+    overflow: wrap;
+}
+
+.results .old {
+    opacity: 0.35;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.error {
+    background: #fdc3c3;
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .select-wrapper select {
+        align-self: center;
+        width: 100%;
+    }
+
+    .field {
+        width: 100%;
+    }
+}
